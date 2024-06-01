@@ -7,8 +7,8 @@ from config import db
 class Purchase(db.Model, SerializerMixin):
     __tablename__ = 'purchases'
 
-    serialize_rules = ('-user.rentals', '-user.reviews', '-user.instruments', 
-                       '-instrument.rentals', '-instrument.reviews', '-review',)
+    serialize_rules = ('-user.purchases', '-user.reviews', '-user.instruments', 
+                       '-instrument.purchases', '-instrument.reviews', '-review',)
 
     id=db.Column(db.Integer, primary_key=True)
 
